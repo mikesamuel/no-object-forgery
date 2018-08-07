@@ -1,6 +1,6 @@
 {
   "name": "no-object-forgery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monkeypatch JSON to distinguish parsed objects from those that originate in user code.",
   "main": "index.js",
   "files": [

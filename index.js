@@ -43,6 +43,7 @@ JSON.parse = function parse(jsonString, optReviver) {
     markingReviver;
   return jsonParseTrusted(jsonString, reviver);
 };
+JSON.parseTrusted = jsonParseTrusted;
 // TODO: Other common JavaScript object parsing vectors.
 // * XHR response with type application/json?
 // * JSON injected into a <script> body by a server-side template.

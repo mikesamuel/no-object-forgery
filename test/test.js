@@ -48,6 +48,10 @@ describe('isParsedObject', () => {
     expect(isParsedObject(JSON.parse('42'))).to.equal(false);
     expect(isParsedObject(JSON.parse('null'))).to.equal(false);
   });
+  it('parsed object trusted', () => {
+    expect(isParsedObject(JSON.parseTrusted('{}'))).to.equal(false);
+    expect(isParsedObject(JSON.parseTrusted('{ "a": "b" }'))).to.equal(false);
+  });
   it('custom reviver', () => {
     function reviver(key, value) {
       if (typeof value === 'object' && value && value.type === 'Date') {

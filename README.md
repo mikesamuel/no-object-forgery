@@ -15,9 +15,19 @@ See [Protecting against Object Forgery"](https://medium.com/@mikesamuel/protect
 ```js
 const isParsedObject = require('no-object-forgery');
 
+// myJsonString might come from an attacker.
+const x = JSON.parse(myJsonString);
+
 if (isParsedObject(x)) {
   // Don't treat x as privileged.
 }
+```
+
+If you know that a string is trustworthy, you can parse an object that
+is not recognized as a parsed object.
+
+```js
+JSON.parseTrusted(trustworthyJsonString);
 ```
 
 ----

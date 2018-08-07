@@ -25,7 +25,7 @@ echo "$PACKED_OK" | egrep -qi '^y'
 # Test that it installs and tests run in isolation
 cp "$TARBALL" "$TMP_WORKSPACE"/
 cp -r test/ "$TMP_WORKSPACE"/package/test/
-cp .eslintignore "$TMP_WORKSPACE"/package/
+cp "$TMP_WORKSPACE"/package/
 pushd "$TMP_WORKSPACE"
   tar xfz "$TARBALL" && (
     pushd "$TMP_WORKSPACE"/package

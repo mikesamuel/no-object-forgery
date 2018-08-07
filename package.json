@@ -1,0 +1,57 @@
+{
+  "name": "no-object-forgery",
+  "version": "1.0.0",
+  "description": "Monkeypatch JSON to distinguish parsed objects from those that originate in user code.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesamuel/no-object-forgery.git"
+  },
+  "keywords": [
+    "security",
+    "json"
+  ],
+  "author": "@mikesamuel",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mikesamuel/no-object-forgery/issues"
+  },
+  "homepage": "https://github.com/mikesamuel/no-object-forgery#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.15.0",
+    "eslint-config-strict": "^14.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "pre-commit": "^1.2.2"
+  },
+  "scripts": {
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "lint": "eslint .",
+    "prepack": "npm run lint && npm test",
+    "test": "mocha"
+  },
+  "pre-commit": [
+    "prepack"
+  ],
+  "eslintIgnore": ["/coverage"],
+  "eslintConfig": {
+    "extends": [
+      "strict"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "sourceType": "source",
+      "ecmaFeatures": {
+        "impliedStrict": false
+      }
+    },
+    "rules": {
+      "no-warning-comments": 0
+    }
+  }
+}
